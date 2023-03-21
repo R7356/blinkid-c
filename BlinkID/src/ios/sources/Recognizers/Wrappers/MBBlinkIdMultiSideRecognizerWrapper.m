@@ -1,22 +1,22 @@
-#import "MBBlinkIdCombinedRecognizerWrapper.h"
+#import "MBBlinkIdMultiSideRecognizerWrapper.h"
 #import "MBSerializationUtils.h"
 #import "MBBlinkIDSerializationUtils.h"
 #import "MBCommonSerializationUtils.h"
 
-@implementation MBBlinkIdCombinedRecognizerCreator
+@implementation MBBlinkIdMultiSideRecognizerCreator
 
 @synthesize jsonName = _jsonName;
 
 -(instancetype) init {
     self = [super init];
     if (self) {
-        _jsonName = @"BlinkIdCombinedRecognizer";
+        _jsonName = @"BlinkIdMultiSideRecognizer";
     }
     return self;
 }
 
 -(MBRecognizer *) createRecognizer:(NSDictionary*) jsonRecognizer {
-    MBBlinkIdCombinedRecognizer *recognizer = [[MBBlinkIdCombinedRecognizer alloc] init];
+    MBBlinkIdMultiSideRecognizer *recognizer = [[MBBlinkIdMultiSideRecognizer alloc] init];
     {
         id allowBlurFilter = [jsonRecognizer valueForKey:@"allowBlurFilter"];
         if (allowBlurFilter != nil) {
@@ -137,10 +137,10 @@
 
 @end
 
-@interface MBBlinkIdCombinedRecognizer (JsonSerialization)
+@interface MBBlinkIdMultiSideRecognizer (JsonSerialization)
 @end
 
-@implementation MBBlinkIdCombinedRecognizer (JsonSerialization)
+@implementation MBBlinkIdMultiSideRecognizer (JsonSerialization)
 
 -(NSDictionary *) serializeResult {
     NSMutableDictionary* jsonResult = (NSMutableDictionary*)[super serializeResult];
